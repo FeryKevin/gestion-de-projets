@@ -12,7 +12,7 @@ final class ProjectController extends AbstractController
     #[Route(path: "/project", name: "project")]
     public function project(Request $request): Response
     {
-        return $this->render('project/view_project.html.twig', [
+        return $this->render('project/view.html.twig', [
         ]);
     }
     
