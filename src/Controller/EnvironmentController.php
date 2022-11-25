@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 final class EnvironmentController extends AbstractController
 {   
-    #[Route(path: "/Environment/Add", name: "hostAdd")]
+    #[Route(path: "/Environment/Add", name: "environmentAdd")]
     public function EnvironmentAdd(Request $request): Response
     {
         return $this->render('Environment/Insert.html.twig', [

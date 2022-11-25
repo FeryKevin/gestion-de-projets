@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Ajouter un environment{% endblock %}</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+            <link rel="stylesheet" href="{{asset('css/style.css')}}">
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+            <script src="{{asset('js/script.js')}}"></script>
+        {% endblock %}
+    </head>
+    <body>
+
+        {% include 'includes/navbar.html.twig' %}
+
+        <section id="update">
+
+            <div class="container-fluid">
+                <div class="row">
+
+                    <!-- menu -->                 
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        {% include 'includes/menu.html.twig' %}
+                    </div>
+
+                    <!-- titre -->
+                    <div class="col-lg-9 col-md-9 col-sm-12">
+
+                        <!-- lien -->
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <h2 class='nouv'>Nouvel environnement</h2>
+                            <ul class="listContact">
+                                <a href="{{ path('projectAdd') }}" class="infoGenerale2">INFORMATIONS GÉNÉRALES</a>&emsp;
+                                <a href="{{ path('environmentAdd') }}" class="contactLien4">ENVIRONNEMENT PROJET</a>
+                            </ul>
+                        </div>
+
+                        <!-- debut carré -->
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="add">
+
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <form method="Post">  
+
+                                        <div class="envAffichage">
+                                                                                                                                                                                        
+                                            <input type="hidden" name="idContact" value=''>
+
+                                            <br>
+                                            <!-- nom -->
+                                            <div class="nom">                                       
+                                                <label class="labEnv" for="name">Nom &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label>
+                                                <input name="name" class="inputEnv0" value="">
+                                            </div>
+                                            <br>
+
+                                            <!-- addresse ip -->
+                                            <div class="addresse_ip">
+                                                <label class="labEnv" for="ip_address">Adresse IP&emsp;&emsp;&emsp;&emsp;</label>
+                                                <input class="inputEnv1" name="ip_address" value="">
+                                            </div> 
+                                            <br>
+                                            
+                                            <!-- ssh username -->
+                                            <div class="ssh_username">
+                                                <label class="labEnv" for="ssh_username">Nom d'utilisateur &emsp;</label>
+                                                <input class="inputEnv2" name="ssh_username" value="">
+                                            </div>  
+                                
+                                            <!-- project -->
+                                            
+                                            <div class="group-form">
+                                                <div class="project">
+                                                    <label class="labEnv" for="project">Projet <span style="color:red">*&emsp;</span></label>
+                                                    <select type="text" name="project" class="selectEnv">
+                                                    </select>
+                                                    <p class='erreurEnv'></p>
+                                                </div>
+                                            </div>
+
+                                            <br>
+
+                                            <div class="form-right">
+
+                                                <!-- port ssh -->
+                                                <div class="port_ssh">
+                                                    <label class="labContact" for="ssh_port">Port SSH &emsp;</label>
+                                                    <input class="inputEnv4" name="ssh_port" value="">
+                                                    <p class='error'></p>
+
+                                                    <!-- ip restriction -->
+                                                    <label for="ip_restriction">
+                                                    <input type="checkbox" name="ip_restriction">&emsp;Restriction IP</label>
+                                                </div> 
+
+                                                <!-- PHPMyAdmin -->
+                                                <div class="PHPMyAdmin">
+                                                    <label class="labContact" for="phpmyadmin_link">Lien PHPMyAdmin &emsp;</label>
+                                                    <input class="inputEnv5" name="phpmyadmin_link" value="">
+                                                </div>    
+                                                       
+                                                <br>
+
+                                                <!-- link -->
+                                                <div class="link">
+                                                    <label class="labContact" for="link">Lien&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label>
+                                                    <input class="inputEnv6" name="link" value="">   
+                                                </div>    
+                                                
+
+                                            </div>
+                                        </div>
+
+                                        <br>
+
+                                        <!-- ajouter -->
+                                        <button type="submit" name="submit" class="btnOrange">+ AJOUTER</a>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        {% include 'includes/footer.html.twig' %}
+
+        {% block body %}
+        {% endblock %}
+
+    </body>
+</html>
