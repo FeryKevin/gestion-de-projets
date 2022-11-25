@@ -16,4 +16,18 @@ final class ProjectController extends AbstractController
         ]);
     }
     
+    #[Route(path: "/project/add", name: "projectAdd")]
+    public function projectAdd(Request $request): Response
+    {
+        return $this->render('project/insert.html.twig', [
+        ]);
+    }
+
+    // #[Route(path: "/project/update{id}", name: "projectUpdate")]
+    #[Route(path: "/project/update", name: "projectUpdate")]
+    public function projectUpdate(Request $request): Response
+    {
+        return $this->render('project/update.html.twig', [
+        ]);
+    }
 }

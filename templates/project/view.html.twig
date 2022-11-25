@@ -11,8 +11,8 @@
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
+            <link rel="stylesheet" href="{{asset('css/style.css')}}"
         {% endblock %}
-        <link rel="stylesheet" href="{{asset('css/style.css')}}"
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
@@ -65,8 +65,15 @@
                                                 <td><input class="inputSearch" name='host' value=''></td>
                                                 <td>
                                                     <button type='submit' style='display:none'>Chercher</button>
-                                                    <a class='reset' href='Project/all'>X</button>
+                                                    <a class='reset' href='{{ path('project') }}'>X</button>
                                                 </td>
+                                            </tr>
+
+                                            <tr class='tr2Tableau'>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td><a class="aTabl" href='{{ path('projectUpdate') }}'>Modifier</a></td>
                                             </tr>
                                         
                                         </table>
@@ -91,7 +98,7 @@
                                                     <a class="page-link"><span class="glyphicon glyphicon-chevron-left"></span></a>
                                                 </li>
                                                     <li class="page-item">
-                                                        <a href="" class="page-link"><?= $page ?></a>
+                                                        <a href="" class="page-link"></a>
                                                     </li>
                                                     <li class="page-item" >
                                                     <a class="page-link"><span class="glyphicon glyphicon-chevron-right"></span></a>
@@ -102,14 +109,14 @@
                                         <!-- liens -->
                                         <div class="col-lg-3 col-lg-offset-1 col-md-3 col-sm-3">
                                             <div class="tableauBouton">                                          
-                                                <a href='Project/view.php' class="btnBlanc"><span class="glyphicon glyphicon-file"></span>&emsp;EXPORTER</a>&emsp;
+                                                <a href='{{ path('project') }}' class="btnBlanc"><span class="glyphicon glyphicon-file"></span>&emsp;EXPORTER</a>&emsp;
                                             </div>                                           
                                         </div>                                                
                                     
                                         <!-- liens -->
                                         <div class="col-lg-2 col-md-3 col-sm-3">
                                             <div class="tableauBouton">
-                                                <a href='Project/Insert.php' class="btnOrange">+ AJOUTER</a>
+                                                <a href='{{ path('projectAdd') }}' class="btnOrange">+ AJOUTER</a>
                                             </div>                                           
                                         </div>
 
