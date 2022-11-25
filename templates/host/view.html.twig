@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Liste des projets{% endblock %}</title>
+        <title>{% block title %}Liste des hébergeurs{% endblock %}</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -35,7 +35,7 @@
 
                     <!-- section -->
                     <div class="col-lg-9 col-md-9 col-sm-12">
-                        <h3 class="nouv">&emsp;Projets</h3>
+                        <h3 class="nouv">&emsp;Hébergeurs</h3>
 
                          <!-- debut carré -->
                         <div class="col-lg-12 col-md-12 col-sm-12">
@@ -52,31 +52,36 @@
 
                                             <!-- titre -->
                                             <tr class="trTableau">
-                                                <th>NOM</th>                                                
-                                                <th>CLIENT</th>
-                                                <th>HEBERGEUR</th>
+                                                <th>CODE</th>
+                                                <th>NOM</th>
+                                                <th>NOTES</th>
                                                 <th>MODIFIER</th>
                                             </tr>
 
                                             <!-- filtre -->
                                             
-                                            <tr>
-                                                <td><input class="inputSearch" name='name' value=''></td>
-                                                <td><input class="inputSearch" name='customer' value=''></td>
-                                                <td><input class="inputSearch" name='host' value=''></td>
-                                                <td>
-                                                    <button type='submit' style='display:none'>Chercher</button>
-                                                    <a class='reset' href='{{ path('project') }}'>X</button>
-                                                </td>
-                                            </tr>
-
+                                                <tr>
+                                                    <td><input class="inputSearch" name='code' value=''></td>
+                                                    <td><input class="inputSearch" name='name' value=''></td>
+                                                    <td><input class="inputSearch" name='notes' value=''></td>
+                                                    <td>
+                                                        <button type='submit' style='display:none'>Chercher</button>
+                                                        <a class='reset' href='{{ path('host') }}'>X</button>
+                                                    </td>
+                                                </tr>
+                                            
+                                            <!-- affichage -->
+                                            
                                             <tr class='tr2Tableau'>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
-                                                <td><a class="aTabl" href='{{ path('projectUpdate') }}'>Modifier</a></td>
+                                                <td>
+                                                    <a class='aTabl' href='{{ path('hostUpdate') }}'>Modifier</a>
+                                                </td>
                                             </tr>
-                                        
+                                                    
+
                                         </table>
 
                                         <!-- pagination choix affichage -->
@@ -96,13 +101,13 @@
                                         <div class="col-lg-3 col-md-3 col-sm-3">                                                                
                                             <ul class="pagination">
                                                 <li class="page-item">
-                                                    <a class="page-link"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                                                    <a href='' class="page-link"><span class="glyphicon glyphicon-chevron-left"></span></a>
                                                 </li>
-                                                    <li class="page-item">
-                                                        <a href="" class="page-link"></a>
-                                                    </li>
+                                                <li class="page-item">
+                                                    <a href="" class="page-link"></a>
+                                                </li>
                                                     <li class="page-item" >
-                                                    <a class="page-link"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                                                    <a href='' class="page-link"><span class="glyphicon glyphicon-chevron-right"></span></a>
                                                 </li>
                                             </ul>                                            
                                         </div>
@@ -110,22 +115,26 @@
                                         <!-- liens -->
                                         <div class="col-lg-3 col-lg-offset-1 col-md-3 col-sm-3">
                                             <div class="tableauBouton">                                          
-                                                <a href='{{ path('project') }}' class="btnBlanc"><span class="glyphicon glyphicon-file"></span>&emsp;EXPORTER</a>&emsp;
+                                                <a href='{{ path('host') }}' class="btnBlanc"><span class="glyphicon glyphicon-file"></span>&emsp;EXPORTER</a>&emsp;
                                             </div>                                           
                                         </div>                                                
                                     
                                         <!-- liens -->
                                         <div class="col-lg-2 col-md-3 col-sm-3">
                                             <div class="tableauBouton">
-                                                <a href='{{ path('projectAdd') }}' class="btnOrange">+ AJOUTER</a>
+                                                <a href='{{ path('hostAdd') }}' class="btnOrange">+ AJOUTER</a>
                                             </div>                                           
                                         </div>
 
-                                    </form>                                
-                                </div>                            
+                                    </form>
+                                
+                                </div>
+                            
                             </div>
                         </div>
+
                     </div>
+
                 </div>
             </div>
 

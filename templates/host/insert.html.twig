@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Ajouter un hébergeur{% endblock %}</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+            <link rel="stylesheet" href="{{asset('css/style.css')}}">
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+            <script src="{{asset('js/script.js')}}"></script>
+        {% endblock %}
+    </head>
+    <body>
+
+        {% include 'includes/navbar.html.twig' %}
+
+        <section id="insert">
+
+            <div class="container-fluid">
+                <div class="row">
+
+                    <!-- menu -->
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        {% include 'includes/menu.html.twig' %}
+                    </div>
+
+                    <!-- page -->
+                    <div class="col-lg-9 col-md-9 col-sm-12">
+
+                        <!-- lien -->
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <h2 class="nouv">Nouvel hébergeur</h2>
+                            <ul class="listContact">
+                                <a href="{{ path('hostAdd') }}" class="infoGenerale">INFORMATIONS GÉNÉRALES</a>&emsp;
+                            </ul>
+                        </div>
+
+                        <!-- debut carré -->
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="add">
+
+                                <!-- début form -->
+                                <form method='Post'>
+
+                                    <label class="lab">Nom <span style="color:red">*</span></label>
+                                    <input name='name' class="input0" value="">
+                                    <p class="error"></p>
+
+                                    <br>
+
+                                    <label class="lab">Code interne</label>
+                                    <button disabled="disabled" class="input1">Champs généré automatiquement</button>
+
+                                    <br>
+
+                                    <label class="lab2">Notes / remarques</label>
+                                    <textarea name='notes' class="textarea"></textarea>
+                                    <p class="error"></p>
+
+                                    <!-- bouton form -->
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="btnPlace">
+                                            <a href="{{ path('host') }}" class="btnBlanc">ANNULER</a>&emsp;
+                                            <button type='submit' name='submit' class="btnOrange"><span class="glyphicon glyphicon-ok"></span> SAUVEGARDER</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+        
+        {% include 'includes/footer.html.twig' %}
+
+        {% block body %}
+        {% endblock %}
+
+    </body>
+</html>
