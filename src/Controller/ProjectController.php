@@ -9,25 +9,25 @@ use Symfony\Component\Routing\Annotation\Route;
 
 final class ProjectController extends AbstractController
 {
-    #[Route(path: "/project", name: "project")]
+    #[Route(path: "/Project", name: "project")]
     public function project(Request $request): Response
     {
-        return $this->render('project/view.html.twig', [
+        return $this->render('Project/View.html.twig', [
         ]);
     }
     
-    #[Route(path: "/project/add", name: "projectAdd")]
-    public function projectAdd(Request $request): Response
+    #[Route(path: "/Project/Add", name: "projectAdd")]
+    public function ProjectAdd(Request $request): Response
     {
-        return $this->render('project/insert.html.twig', [
+        return $this->render('Project/Insert.html.twig', [
         ]);
     }
 
-    // #[Route(path: "/project/update{id}", name: "projectUpdate")]
-    #[Route(path: "/project/update", name: "projectUpdate")]
-    public function projectUpdate(Request $request): Response
+    // #[Route(path: "/Project/Update{id}", name: "projectUpdate")]
+    #[Route(path: "/Project/Update", name: "projectUpdate")]
+    public function ProjectUpdate(Request $request): Response
     {
-        return $this->render('project/update.html.twig', [
+        return $this->render('Project/Update.html.twig', [
         ]);
     }
 }
