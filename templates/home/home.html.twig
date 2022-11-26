@@ -21,24 +21,25 @@
     </head>
     <body>
 
-        {% include 'includes/navbar.html.twig' %}
-
-        <section id="sec1">
-
-            <div class="container-fluid">
-                <div class="row">
-
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        {% include 'includes/menu.html.twig' %}
-                    </div>
-                
-                </div>
-            </div>
-        </section>
-        
-        {% include 'includes/footer.html.twig' %}
-
         {% block body %}
+
+            {% include 'includes/navbar.html.twig' %}
+
+            <section id="sec1">
+
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            {% include 'includes/menu.html.twig' %}
+                        </div>
+                    
+                    </div>
+                </div>
+            </section>
+            
+            {% include 'includes/footer.html.twig' %}
+
         {% endblock %}
 
     </body>
