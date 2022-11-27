@@ -17,7 +17,7 @@ final class ProjectController extends AbstractController
     }
     
     #[Route(path: "/Project/Add", name: "projectAdd")]
-    public function ProjectAdd(Request $request): Response
+    public function projectAdd(Request $request): Response
     {
         return $this->render('Project/Insert.html.twig', [
         ]);
@@ -25,7 +25,7 @@ final class ProjectController extends AbstractController
 
     // #[Route(path: "/Project/Update{id}", name: "projectUpdate")]
     #[Route(path: "/Project/Update", name: "projectUpdate")]
-    public function ProjectUpdate(Request $request): Response
+    public function projectUpdate(Request $request): Response
     {
         return $this->render('Project/Update.html.twig', [
         ]);

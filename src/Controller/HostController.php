@@ -10,14 +10,14 @@ use Symfony\Component\Routing\Annotation\Route;
 final class HostController extends AbstractController
 {
     #[Route(path: "/Host", name: "host")]
-    public function Host(Request $request): Response
+    public function host(Request $request): Response
     {
         return $this->render('Host/View.html.twig', [
         ]);
     }
     
     #[Route(path: "/Host/Add", name: "hostAdd")]
-    public function HostAdd(Request $request): Response
+    public function hostAdd(Request $request): Response
     {
         return $this->render('Host/Insert.html.twig', [
         ]);
@@ -25,7 +25,7 @@ final class HostController extends AbstractController
 
     // #[Route(path: "/Host/Update{id}", name: "hostUpdate")]
     #[Route(path: "/Host/Update", name: "hostUpdate")]
-    public function HostUpdate(Request $request): Response
+    public function hostUpdate(Request $request): Response
     {
         return $this->render('Host/Update.html.twig', [
         ]);

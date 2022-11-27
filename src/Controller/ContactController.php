@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 final class ContactController extends AbstractController
 {   
     #[Route(path: "/Contact/Add", name: "contactAdd")]
-    public function ContactAdd(Request $request): Response
+    public function contactAdd(Request $request): Response
     {
         return $this->render('Contact/Insert.html.twig', [
         ]);
@@ -18,7 +18,7 @@ final class ContactController extends AbstractController
 
     // #[Route(path: "/Contact/Update{id}", name: "contactUpdate")]
     #[Route(path: "/Contact/Update", name: "contactUpdate")]
-    public function ContactUpdate(Request $request): Response
+    public function contactUpdate(Request $request): Response
     {
         return $this->render('Contact/Update.html.twig', [
         ]);
