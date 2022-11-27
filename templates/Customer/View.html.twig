@@ -23,127 +23,127 @@
     <body>
 
         {% block body %}
-        
-        {% include 'includes/navbar.html.twig' %}
-            
-            <section id="View">
 
-                <div class="container-fluid">
-                    <div class="row">
+            {% include 'includes/navbar.html.twig' %}
+                
+                <section id="View">
 
-                        <!-- menu -->
-                        <div class="col-lg-3 col-md-3 col-sm-12">
-                            {% include 'includes/menu.html.twig' %}
-                        </div>
+                    <div class="container-fluid">
+                        <div class="row">
 
-                        <!-- section -->
-                        <div class="col-lg-9 col-md-9 col-sm-12">
-                            <h3 class="nouv">&emsp;Clients</h3>
+                            <!-- menu -->
+                            <div class="col-lg-3 col-md-3 col-sm-12">
+                                {% include 'includes/menu.html.twig' %}
+                            </div>
 
-                            <!-- debut carré -->
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                
-                                <div class="fondTableau">
+                            <!-- section -->
+                            <div class="col-lg-9 col-md-9 col-sm-12">
+                                <h3 class="nouv">&emsp;Clients</h3>
 
-                                    <!-- début tableau -->
-                                    <div class="table-responsive">
+                                <!-- debut carré -->
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    
+                                    <div class="fondTableau">
 
-                                        <!-- form -->
-                                        <form>
+                                        <!-- début tableau -->
+                                        <div class="table-responsive">
 
-                                            <table class="table table-bordered" id="tabClient">
+                                            <!-- form -->
+                                            <form>
 
-                                                <!-- titre -->
-                                                <tr class="trTableau">
-                                                    <th>CODE</th>
-                                                    <th>NOM</th>
-                                                    <th>NOTES</th>
-                                                    <th>MODIFIER</th>
-                                                </tr>
+                                                <table class="table table-bordered" id="tabClient">
 
-                                                <!-- filtre -->
-                                                
-                                                    <tr>
-                                                        <td><input class="inputSearch" name='code' value=''></td>
-                                                        <td><input class="inputSearch" name='name' value=''></td>
-                                                        <td><input class="inputSearch" name='notes' value=''></td>
+                                                    <!-- titre -->
+                                                    <tr class="trTableau">
+                                                        <th>CODE</th>
+                                                        <th>NOM</th>
+                                                        <th>NOTES</th>
+                                                        <th>MODIFIER</th>
+                                                    </tr>
+
+                                                    <!-- filtre -->
+                                                    
+                                                        <tr>
+                                                            <td><input class="inputSearch" name='code' value=''></td>
+                                                            <td><input class="inputSearch" name='name' value=''></td>
+                                                            <td><input class="inputSearch" name='notes' value=''></td>
+                                                            <td>
+                                                                <button type='submit' style='display:none'>Chercher</button>
+                                                                <a class='reset' href='{{ path('customer') }}'>X</button>
+                                                            </td>
+                                                        </tr>
+                                                    
+                                                    <!-- affichage -->
+                                                    
+                                                    <tr class='tr2Tableau'>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
                                                         <td>
-                                                            <button type='submit' style='display:none'>Chercher</button>
-                                                            <a class='reset' href='{{ path('customer') }}'>X</button>
+                                                            <a class='aTabl' href='{{ path('customerUpdate') }}'>Modifier</a>
                                                         </td>
                                                     </tr>
-                                                
-                                                <!-- affichage -->
-                                                
-                                                <tr class='tr2Tableau'>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td>
-                                                        <a class='aTabl' href='{{ path('customerUpdate') }}'>Modifier</a>
-                                                    </td>
-                                                </tr>
-                                                        
+                                                            
 
-                                            </table>
+                                                </table>
 
-                                            <!-- pagination choix affichage -->
-                                            <div class="col-lg-3 col-md-3 sm-3"> 
-                                                <div class="paginationCSS">                                          
-                                                    <label class="labelPagination">Résultats/pages&emsp;</label>
-                                                    <select name='nbPage' onchange="this.form.submit()" class="selectPagination">
-                                                        <option value="5">5</option>
-                                                        <option value="10">10</option>
-                                                        <option value="15">15</option>
-                                                        <option value="20">20</option>
-                                                    </select>
+                                                <!-- pagination choix affichage -->
+                                                <div class="col-lg-3 col-md-3 sm-3"> 
+                                                    <div class="paginationCSS">                                          
+                                                        <label class="labelPagination">Résultats/pages&emsp;</label>
+                                                        <select name='nbPage' onchange="this.form.submit()" class="selectPagination">
+                                                            <option value="5">5</option>
+                                                            <option value="10">10</option>
+                                                            <option value="15">15</option>
+                                                            <option value="20">20</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
-                                            </div>
 
-                                            <!-- pagination boutons -->
-                                            <div class="col-lg-3 col-md-3 col-sm-3">                                                                
-                                                <ul class="pagination">
-                                                    <li class="page-item">
-                                                        <a href='' class="page-link"><span class="glyphicon glyphicon-chevron-left"></span></a>
-                                                    </li>
-                                                    <li class="page-item">
-                                                        <a href="" class="page-link"></a>
-                                                    </li>
-                                                        <li class="page-item" >
-                                                        <a href='' class="page-link"><span class="glyphicon glyphicon-chevron-right"></span></a>
-                                                    </li>
-                                                </ul>                                            
-                                            </div>
+                                                <!-- pagination boutons -->
+                                                <div class="col-lg-3 col-md-3 col-sm-3">                                                                
+                                                    <ul class="pagination">
+                                                        <li class="page-item">
+                                                            <a href='' class="page-link"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a href="" class="page-link"></a>
+                                                        </li>
+                                                            <li class="page-item" >
+                                                            <a href='' class="page-link"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                                                        </li>
+                                                    </ul>                                            
+                                                </div>
+                                                
+                                                <!-- liens -->
+                                                <div class="col-lg-3 col-lg-offset-1 col-md-3 col-sm-3">
+                                                    <div class="tableauBouton">                                          
+                                                        <a href='{{ path('customer') }}' class="btnBlanc"><span class="glyphicon glyphicon-file"></span>&emsp;EXPORTER</a>&emsp;
+                                                    </div>                                           
+                                                </div>                                                
                                             
-                                            <!-- liens -->
-                                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-sm-3">
-                                                <div class="tableauBouton">                                          
-                                                    <a href='{{ path('customer') }}' class="btnBlanc"><span class="glyphicon glyphicon-file"></span>&emsp;EXPORTER</a>&emsp;
-                                                </div>                                           
-                                            </div>                                                
-                                        
-                                            <!-- liens -->
-                                            <div class="col-lg-2 col-md-3 col-sm-3">
-                                                <div class="tableauBouton">
-                                                    <a href='{{ path('customerAdd') }}' class="btnOrange">+ AJOUTER</a>
-                                                </div>                                           
-                                            </div>
+                                                <!-- liens -->
+                                                <div class="col-lg-2 col-md-3 col-sm-3">
+                                                    <div class="tableauBouton">
+                                                        <a href='{{ path('customerAdd') }}' class="btnOrange">+ AJOUTER</a>
+                                                    </div>                                           
+                                                </div>
 
-                                        </form>
+                                            </form>
+                                        
+                                        </div>
                                     
                                     </div>
-                                
                                 </div>
+
                             </div>
 
                         </div>
-
                     </div>
-                </div>
 
-            </section>
-        
-        {% include 'includes/footer.html.twig' %}
+                </section>
+            
+            {% include 'includes/footer.html.twig' %}
         
         {% endblock %}
 

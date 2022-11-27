@@ -21,119 +21,120 @@
     </head>
     <body>
 
-        {% include 'includes/navbar.html.twig' %}
+        {% block body %}
+        
+            {% include 'includes/navbar.html.twig' %}
 
-        <section id="View">
+            <section id="View">
 
-            <div class="container-fluid">
-                <div class="row">
+                <div class="container-fluid">
+                    <div class="row">
 
-                    <!-- menu -->
-                    <div class="col-lg-3 col-md-3 col-sm-12">
-                        {% include 'includes/menu.html.twig' %}
-                    </div>
+                        <!-- menu -->
+                        <div class="col-lg-3 col-md-3 col-sm-12">
+                            {% include 'includes/menu.html.twig' %}
+                        </div>
 
-                    <!-- section -->
-                    <div class="col-lg-9 col-md-9 col-sm-12">
-                        <h3 class="nouv">&emsp;Projets</h3>
+                        <!-- section -->
+                        <div class="col-lg-9 col-md-9 col-sm-12">
+                            <h3 class="nouv">&emsp;Projets</h3>
 
-                         <!-- debut carré -->
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            
-                            <div class="fondTableau">
+                            <!-- debut carré -->
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                
+                                <div class="fondTableau">
 
-                                <!-- début tableau -->
-                                <div class="table-responsive">
+                                    <!-- début tableau -->
+                                    <div class="table-responsive">
 
-                                    <!-- form -->
-                                    <form>
+                                        <!-- form -->
+                                        <form>
 
-                                        <table class="table table-bordered" id="tabClient">
+                                            <table class="table table-bordered" id="tabClient">
 
-                                            <!-- titre -->
-                                            <tr class="trTableau">
-                                                <th>NOM</th>                                                
-                                                <th>CLIENT</th>
-                                                <th>HEBERGEUR</th>
-                                                <th>MODIFIER</th>
-                                            </tr>
+                                                <!-- titre -->
+                                                <tr class="trTableau">
+                                                    <th>NOM</th>                                                
+                                                    <th>CLIENT</th>
+                                                    <th>HEBERGEUR</th>
+                                                    <th>MODIFIER</th>
+                                                </tr>
 
-                                            <!-- filtre -->
+                                                <!-- filtre -->
+                                                
+                                                <tr>
+                                                    <td><input class="inputSearch" name='name' value=''></td>
+                                                    <td><input class="inputSearch" name='customer' value=''></td>
+                                                    <td><input class="inputSearch" name='host' value=''></td>
+                                                    <td>
+                                                        <button type='submit' style='display:none'>Chercher</button>
+                                                        <a class='reset' href='{{ path('project') }}'>X</button>
+                                                    </td>
+                                                </tr>
+
+                                                <tr class='tr2Tableau'>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td><a class="aTabl" href='{{ path('projectUpdate') }}'>Modifier</a></td>
+                                                </tr>
                                             
-                                            <tr>
-                                                <td><input class="inputSearch" name='name' value=''></td>
-                                                <td><input class="inputSearch" name='customer' value=''></td>
-                                                <td><input class="inputSearch" name='host' value=''></td>
-                                                <td>
-                                                    <button type='submit' style='display:none'>Chercher</button>
-                                                    <a class='reset' href='{{ path('project') }}'>X</button>
-                                                </td>
-                                            </tr>
+                                            </table>
 
-                                            <tr class='tr2Tableau'>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td><a class="aTabl" href='{{ path('projectUpdate') }}'>Modifier</a></td>
-                                            </tr>
-                                        
-                                        </table>
-
-                                        <!-- pagination choix affichage -->
-                                        <div class="col-lg-3 col-md-3 sm-3"> 
-                                            <div class="paginationCSS">                                          
-                                                <label class="labelPagination">Résultats/pages&emsp;</label>
-                                                <select name='nbPage' onchange="this.form.submit()" class="selectPagination">
-                                                    <option value="5">5</option>
-                                                    <option value="10">10</option>
-                                                    <option value="15">15</option>
-                                                    <option value="20">20</option>
-                                                </select>
+                                            <!-- pagination choix affichage -->
+                                            <div class="col-lg-3 col-md-3 sm-3"> 
+                                                <div class="paginationCSS">                                          
+                                                    <label class="labelPagination">Résultats/pages&emsp;</label>
+                                                    <select name='nbPage' onchange="this.form.submit()" class="selectPagination">
+                                                        <option value="5">5</option>
+                                                        <option value="10">10</option>
+                                                        <option value="15">15</option>
+                                                        <option value="20">20</option>
+                                                    </select>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <!-- pagination boutons -->
-                                        <div class="col-lg-3 col-md-3 col-sm-3">                                                                
-                                            <ul class="pagination">
-                                                <li class="page-item">
-                                                    <a class="page-link"><span class="glyphicon glyphicon-chevron-left"></span></a>
-                                                </li>
+                                            <!-- pagination boutons -->
+                                            <div class="col-lg-3 col-md-3 col-sm-3">                                                                
+                                                <ul class="pagination">
                                                     <li class="page-item">
-                                                        <a href="" class="page-link"></a>
+                                                        <a class="page-link"><span class="glyphicon glyphicon-chevron-left"></span></a>
                                                     </li>
-                                                    <li class="page-item" >
-                                                    <a class="page-link"><span class="glyphicon glyphicon-chevron-right"></span></a>
-                                                </li>
-                                            </ul>                                            
-                                        </div>
+                                                        <li class="page-item">
+                                                            <a href="" class="page-link"></a>
+                                                        </li>
+                                                        <li class="page-item" >
+                                                        <a class="page-link"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                                                    </li>
+                                                </ul>                                            
+                                            </div>
+                                            
+                                            <!-- liens -->
+                                            <div class="col-lg-3 col-lg-offset-1 col-md-3 col-sm-3">
+                                                <div class="tableauBouton">                                          
+                                                    <a href='{{ path('project') }}' class="btnBlanc"><span class="glyphicon glyphicon-file"></span>&emsp;EXPORTER</a>&emsp;
+                                                </div>                                           
+                                            </div>                                                
                                         
-                                        <!-- liens -->
-                                        <div class="col-lg-3 col-lg-offset-1 col-md-3 col-sm-3">
-                                            <div class="tableauBouton">                                          
-                                                <a href='{{ path('project') }}' class="btnBlanc"><span class="glyphicon glyphicon-file"></span>&emsp;EXPORTER</a>&emsp;
-                                            </div>                                           
-                                        </div>                                                
-                                    
-                                        <!-- liens -->
-                                        <div class="col-lg-2 col-md-3 col-sm-3">
-                                            <div class="tableauBouton">
-                                                <a href='{{ path('projectAdd') }}' class="btnOrange">+ AJOUTER</a>
-                                            </div>                                           
-                                        </div>
+                                            <!-- liens -->
+                                            <div class="col-lg-2 col-md-3 col-sm-3">
+                                                <div class="tableauBouton">
+                                                    <a href='{{ path('projectAdd') }}' class="btnOrange">+ AJOUTER</a>
+                                                </div>                                           
+                                            </div>
 
-                                    </form>                                
-                                </div>                            
+                                        </form>                                
+                                    </div>                            
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-        </section>
-        
-        {% include 'includes/footer.html.twig' %}
+            </section>
+            
+            {% include 'includes/footer.html.twig' %}
 
-        {% block body %}
         {% endblock %}
 
     </body>

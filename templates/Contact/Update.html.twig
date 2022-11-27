@@ -21,149 +21,150 @@
     </head>
     <body>
 
-        {% include 'includes/navbar.html.twig' %}
+        {% block body %}
+        
+            {% include 'includes/navbar.html.twig' %}
 
-        <section id="update">
+            <section id="update">
 
-            <div class="container-fluid">
-                <div class="row">
+                <div class="container-fluid">
+                    <div class="row">
 
-                    <!-- menu -->                 
-                    <div class="col-lg-3 col-md-3 col-sm-12">
-                        {% include 'includes/menu.html.twig' %}
-                    </div>
-
-                    <!-- titre -->
-                    <div class="col-lg-9 col-md-9 col-sm-12">
-
-                        <!-- lien -->
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <h2 class="nouv">Nom</h2>
-                            <ul class="listContact">
-                                <a href="{{ path('home') }}" class="infoGenerale2">INFORMATIONS GÉNÉRALES</a>&emsp;
-                                {# <a href="{{ path('customerAdd') }}" class="infoGenerale2">INFORMATIONS GÉNÉRALES</a>&emsp; #}
-                                {# <a href="{{ path('hostAdd') }}" class="infoGenerale2">INFORMATIONS GÉNÉRALES</a>&emsp; #}
-                                <a href="{{ path('contactAdd') }}" class="contactLien4">CONTACT</a>
-                            </ul>
+                        <!-- menu -->                 
+                        <div class="col-lg-3 col-md-3 col-sm-12">
+                            {% include 'includes/menu.html.twig' %}
                         </div>
 
-                        <!-- debut carré -->
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <div class="addContact">
+                        <!-- titre -->
+                        <div class="col-lg-9 col-md-9 col-sm-12">
+
+                            <!-- lien -->
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <h2 class="nouv">Nom</h2>
+                                <ul class="listContact">
+                                    <a href="{{ path('home') }}" class="infoGenerale2">INFORMATIONS GÉNÉRALES</a>&emsp;
+                                    {# <a href="{{ path('customerAdd') }}" class="infoGenerale2">INFORMATIONS GÉNÉRALES</a>&emsp; #}
+                                    {# <a href="{{ path('hostAdd') }}" class="infoGenerale2">INFORMATIONS GÉNÉRALES</a>&emsp; #}
+                                    <a href="{{ path('contactAdd') }}" class="contactLien4">CONTACT</a>
+                                </ul>
+                            </div>
+
+                            <!-- debut carré -->
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="addContact">
+                                        
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
                                     
-                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                
-                                    <form method="Post">  
+                                        <form method="Post">  
 
-                                        <div class="contactAffichage">
-                                                                                            
-                                            <h3 class="nomContact">Nom</h3>
-                                            
-                                            <input type="hidden" name="idEnvironnement" value=''>
+                                            <div class="contactAffichage">
+                                                                                                
+                                                <h3 class="nomContact">Nom</h3>
+                                                
+                                                <input type="hidden" name="idEnvironnement" value=''>
 
-                                            <br>
-                                            <!-- nom -->
-                                            <div class="nom">                                       
-                                                <label class="labEnv">Nom&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label>
-                                                <input name="name" class="inputEnv0">
-                                            </div>
-                                            
-                                            <!-- email -->
-                                            <div class='group-form'>
-                                                <label class="labEnv">Email &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label>
-                                                <input name='email' class="inputEnv1">
-                                            </div> 
-                                            
-                                            <!-- sauvegarder -->
-                                            <div class="group-form">
-                                                <button type="submit" name="submit" class="btnOrange"><span class="glyphicon glyphicon-ok"></span> SAUVEGARDER</button>&emsp;                                            
-                                            </div>
-
-                                            <div class="form-right">
-
-                                                <!-- supprimer -->
+                                                <br>
+                                                <!-- nom -->
+                                                <div class="nom">                                       
+                                                    <label class="labEnv">Nom&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label>
+                                                    <input name="name" class="inputEnv0">
+                                                </div>
+                                                
+                                                <!-- email -->
                                                 <div class='group-form'>
-                                                    <a href="#" data-toggle="modal" data-target="#modal" class="btnRouge"><span class="glyphicon glyphicon-trash"></span> SUPPRIMER</a>
+                                                    <label class="labEnv">Email &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label>
+                                                    <input name='email' class="inputEnv1">
+                                                </div> 
+                                                
+                                                <!-- sauvegarder -->
+                                                <div class="group-form">
+                                                    <button type="submit" name="submit" class="btnOrange"><span class="glyphicon glyphicon-ok"></span> SAUVEGARDER</button>&emsp;                                            
                                                 </div>
 
-                                                <!-- role -->
-                                                <div class='group-form'>
-                                                    <label class="labContact" for="role">Rôle &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label>
-                                                    <input class="inputEnv5" name="role">
+                                                <div class="form-right">
+
+                                                    <!-- supprimer -->
+                                                    <div class='group-form'>
+                                                        <a href="#" data-toggle="modal" data-target="#modal" class="btnRouge"><span class="glyphicon glyphicon-trash"></span> SUPPRIMER</a>
+                                                    </div>
+
+                                                    <!-- role -->
+                                                    <div class='group-form'>
+                                                        <label class="labContact" for="role">Rôle &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label>
+                                                        <input class="inputEnv5" name="role">
+                                                    </div>
+
+                                                    <!-- telephone -->
+                                                    <div class='group-form'>
+                                                        <label class="labContact" for="phone_number">Téléphone &emsp;&emsp;&emsp;</label>
+                                                        <input class="inputEnv6" name='phone_number'> 
+                                                    </div>
                                                 </div>
 
-                                                <!-- telephone -->
-                                                <div class='group-form'>
-                                                    <label class="labContact" for="phone_number">Téléphone &emsp;&emsp;&emsp;</label>
-                                                    <input class="inputEnv6" name='phone_number'> 
-                                                </div>
-                                            </div>
-
-                                            <!-- bouton form -->
-                                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                                <!-- modal suppression -->
-                                                <div class="modal fade" id="modal"> 
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content"> 
-                                                            <div class="modal-header">
-                                                                <button type="button" class="close" data-dismiss="modal">x</button>
-                                                                <h5 class="modal-title" style="font-weight: bold;">Suppression d'un contact</h5>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <p>Voulez-vous vraiment supprimer le contact <strong>"Nom"</strong> ?</p>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <form method="post">
-                                                                    <input type="hidden" name="id_contact" value="">
-                                                                    <button type="submit" name="submit_delete" class="btnOrange">Supprimer</button>&emsp;
-                                                                </form>
-                                                                <button type="button" class="btnBlanc" data-dismiss="modal">Fermer</button>
+                                                <!-- bouton form -->
+                                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                                    <!-- modal suppression -->
+                                                    <div class="modal fade" id="modal"> 
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content"> 
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close" data-dismiss="modal">x</button>
+                                                                    <h5 class="modal-title" style="font-weight: bold;">Suppression d'un contact</h5>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <p>Voulez-vous vraiment supprimer le contact <strong>"Nom"</strong> ?</p>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <form method="post">
+                                                                        <input type="hidden" name="id_contact" value="">
+                                                                        <button type="submit" name="submit_delete" class="btnOrange">Supprimer</button>&emsp;
+                                                                    </form>
+                                                                    <button type="button" class="btnBlanc" data-dismiss="modal">Fermer</button>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                        </form>
+                                
+                                        <!-- ajouter -->
+                                        <br><br>
+                                        <a href="{{ path('home') }}" class="btnOrange">+ AJOUTER UN CONTACT</a>
+                                        {# <a href="{{ path('customer') }}" class="btnOrange">+ AJOUTER UN CONTACT</a> #}
+                                        {# <a href="{{ path('host') }}" class="btnOrange">+ AJOUTER UN CONTACT</a> #}
+                                        <br><br>
+
+                                        <!-- pagination boutons -->
+                                        <br><br><br>
+                                        <div class="btnPlace1">
+                                            <ul class="pagination">
+                                                <li class="page-item">
+                                                    <a href="" class="page-link"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                                                </li>
+                                                <li class="page-item">
+                                                    <a href="" class="page-link"></a>
+                                                </li>
+                                                <li class="page-item" >
+                                                    <a href="" class="page-link"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                                                </li>
+                                            </ul>                                     
                                         </div>
-                                    </form>
-                            
-                                    <!-- ajouter -->
-                                    <br><br>
-                                    <a href="{{ path('home') }}" class="btnOrange">+ AJOUTER UN CONTACT</a>
-                                    {# <a href="{{ path('customer') }}" class="btnOrange">+ AJOUTER UN CONTACT</a> #}
-                                    {# <a href="{{ path('host') }}" class="btnOrange">+ AJOUTER UN CONTACT</a> #}
-                                    <br><br>
 
-                                    <!-- pagination boutons -->
-                                    <br><br><br>
-                                    <div class="btnPlace1">
-                                        <ul class="pagination">
-                                            <li class="page-item">
-                                                <a href="" class="page-link"><span class="glyphicon glyphicon-chevron-left"></span></a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a href="" class="page-link"></a>
-                                            </li>
-                                            <li class="page-item" >
-                                                <a href="" class="page-link"><span class="glyphicon glyphicon-chevron-right"></span></a>
-                                            </li>
-                                        </ul>                                     
-                                    </div>
+                                    </form>                                
 
-                                </form>                                
-
+                                </div>
                             </div>
+
                         </div>
 
                     </div>
-
                 </div>
-            </div>
 
-        </section>
-        
-        {% include 'includes/footer.html.twig' %}
+            </section>
+            
+            {% include 'includes/footer.html.twig' %}
 
-        {% block body %}
         {% endblock %}
 
     </body>

@@ -21,123 +21,124 @@
     </head>
     <body>
 
-        {% include 'includes/navbar.html.twig' %}
+        {% block body %}
+        
+            {% include 'includes/navbar.html.twig' %}
 
-        <section id="update">
+            <section id="update">
 
-            <div class="container-fluid">
-                <div class="row">
+                <div class="container-fluid">
+                    <div class="row">
 
-                    <!-- menu -->                 
-                    <div class="col-lg-3 col-md-3 col-sm-12">
-                        {% include 'includes/menu.html.twig' %}
-                    </div>
-
-                    <!-- titre -->
-                    <div class="col-lg-9 col-md-9 col-sm-12">
-
-                        <!-- lien -->
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <h2 class='nouv'>Nouvel environnement</h2>
-                            <ul class="listContact">
-                                <a href="{{ path('projectAdd') }}" class="infoGenerale2">INFORMATIONS GÉNÉRALES</a>&emsp;
-                                <a href="{{ path('environmentAdd') }}" class="contactLien4">ENVIRONNEMENT PROJET</a>
-                            </ul>
+                        <!-- menu -->                 
+                        <div class="col-lg-3 col-md-3 col-sm-12">
+                            {% include 'includes/menu.html.twig' %}
                         </div>
 
-                        <!-- debut carré -->
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <div class="add">
+                        <!-- titre -->
+                        <div class="col-lg-9 col-md-9 col-sm-12">
 
-                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <form method="Post">  
+                            <!-- lien -->
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <h2 class='nouv'>Nouvel environnement</h2>
+                                <ul class="listContact">
+                                    <a href="{{ path('projectAdd') }}" class="infoGenerale2">INFORMATIONS GÉNÉRALES</a>&emsp;
+                                    <a href="{{ path('environmentAdd') }}" class="contactLien4">ENVIRONNEMENT PROJET</a>
+                                </ul>
+                            </div>
 
-                                        <div class="envAffichage">
-                                                                                                                                                                                        
-                                            <input type="hidden" name="idContact" value=''>
+                            <!-- debut carré -->
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="add">
 
-                                            <br>
-                                            <!-- nom -->
-                                            <div class="nom">                                       
-                                                <label class="labEnv" for="name">Nom &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label>
-                                                <input name="name" class="inputEnv0" value="">
-                                            </div>
-                                            <br>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <form method="Post">  
 
-                                            <!-- addresse ip -->
-                                            <div class="addresse_ip">
-                                                <label class="labEnv" for="ip_address">Adresse IP&emsp;&emsp;&emsp;&emsp;</label>
-                                                <input class="inputEnv1" name="ip_address" value="">
-                                            </div> 
-                                            <br>
-                                            
-                                            <!-- ssh username -->
-                                            <div class="ssh_username">
-                                                <label class="labEnv" for="ssh_username">Nom d'utilisateur &emsp;</label>
-                                                <input class="inputEnv2" name="ssh_username" value="">
-                                            </div>  
-                                
-                                            <!-- project -->
-                                            
-                                            <div class="group-form">
-                                                <div class="project">
-                                                    <label class="labEnv" for="project">Projet <span style="color:red">*&emsp;</span></label>
-                                                    <select type="text" name="project" class="selectEnv">
-                                                    </select>
-                                                    <p class='erreurEnv'></p>
+                                            <div class="envAffichage">
+                                                                                                                                                                                            
+                                                <input type="hidden" name="idContact" value=''>
+
+                                                <br>
+                                                <!-- nom -->
+                                                <div class="nom">                                       
+                                                    <label class="labEnv" for="name">Nom &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label>
+                                                    <input name="name" class="inputEnv0" value="">
+                                                </div>
+                                                <br>
+
+                                                <!-- addresse ip -->
+                                                <div class="addresse_ip">
+                                                    <label class="labEnv" for="ip_address">Adresse IP&emsp;&emsp;&emsp;&emsp;</label>
+                                                    <input class="inputEnv1" name="ip_address" value="">
+                                                </div> 
+                                                <br>
+                                                
+                                                <!-- ssh username -->
+                                                <div class="ssh_username">
+                                                    <label class="labEnv" for="ssh_username">Nom d'utilisateur &emsp;</label>
+                                                    <input class="inputEnv2" name="ssh_username" value="">
+                                                </div>  
+                                    
+                                                <!-- project -->
+                                                
+                                                <div class="group-form">
+                                                    <div class="project">
+                                                        <label class="labEnv" for="project">Projet <span style="color:red">*&emsp;</span></label>
+                                                        <select type="text" name="project" class="selectEnv">
+                                                        </select>
+                                                        <p class='erreurEnv'></p>
+                                                    </div>
+                                                </div>
+
+                                                <br>
+
+                                                <div class="form-right">
+
+                                                    <!-- port ssh -->
+                                                    <div class="port_ssh">
+                                                        <label class="labContact" for="ssh_port">Port SSH &emsp;</label>
+                                                        <input class="inputEnv4" name="ssh_port" value="">
+                                                        <p class='error'></p>
+
+                                                        <!-- ip restriction -->
+                                                        <label for="ip_restriction">
+                                                        <input type="checkbox" name="ip_restriction">&emsp;Restriction IP</label>
+                                                    </div> 
+
+                                                    <!-- PHPMyAdmin -->
+                                                    <div class="PHPMyAdmin">
+                                                        <label class="labContact" for="phpmyadmin_link">Lien PHPMyAdmin &emsp;</label>
+                                                        <input class="inputEnv5" name="phpmyadmin_link" value="">
+                                                    </div>    
+                                                        
+                                                    <br>
+
+                                                    <!-- link -->
+                                                    <div class="link">
+                                                        <label class="labContact" for="link">Lien&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label>
+                                                        <input class="inputEnv6" name="link" value="">   
+                                                    </div>    
+                                                    
+
                                                 </div>
                                             </div>
 
                                             <br>
 
-                                            <div class="form-right">
+                                            <!-- ajouter -->
+                                            <button type="submit" name="submit" class="btnOrange">+ AJOUTER</a>
 
-                                                <!-- port ssh -->
-                                                <div class="port_ssh">
-                                                    <label class="labContact" for="ssh_port">Port SSH &emsp;</label>
-                                                    <input class="inputEnv4" name="ssh_port" value="">
-                                                    <p class='error'></p>
-
-                                                    <!-- ip restriction -->
-                                                    <label for="ip_restriction">
-                                                    <input type="checkbox" name="ip_restriction">&emsp;Restriction IP</label>
-                                                </div> 
-
-                                                <!-- PHPMyAdmin -->
-                                                <div class="PHPMyAdmin">
-                                                    <label class="labContact" for="phpmyadmin_link">Lien PHPMyAdmin &emsp;</label>
-                                                    <input class="inputEnv5" name="phpmyadmin_link" value="">
-                                                </div>    
-                                                       
-                                                <br>
-
-                                                <!-- link -->
-                                                <div class="link">
-                                                    <label class="labContact" for="link">Lien&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label>
-                                                    <input class="inputEnv6" name="link" value="">   
-                                                </div>    
-                                                
-
-                                            </div>
-                                        </div>
-
-                                        <br>
-
-                                        <!-- ajouter -->
-                                        <button type="submit" name="submit" class="btnOrange">+ AJOUTER</a>
-
-                                    </form>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        
-        {% include 'includes/footer.html.twig' %}
+            </section>
+            
+            {% include 'includes/footer.html.twig' %}
 
-        {% block body %}
         {% endblock %}
 
     </body>

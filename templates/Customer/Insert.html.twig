@@ -21,75 +21,76 @@
     </head>
     <body>
 
-        {% include 'includes/navbar.html.twig' %}
-
-        <section id="insert">
-
-            <div class="container-fluid">
-                <div class="row">
-
-                    <!-- menu -->
-                    <div class="col-lg-3 col-md-3 col-sm-6">
-                        {% include 'includes/menu.html.twig' %}
-                    </div>
-
-                    <!-- page -->
-                    <div class="col-lg-9 col-md-9 col-sm-12">
-
-                        <!-- lien -->
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <h2 class="nouv">Nouveau client</h2>
-                            <ul class="listContact">
-                                <a href="{{ path('customerAdd') }}" class="infoGenerale">INFORMATIONS GÉNÉRALES</a>&emsp;
-                                <a href="{{ path('contactAdd') }}" class="contactLien2">CONTACTS CLIENT</a>
-                            </ul>
-                        </div>
-
-                        <!-- debut carré -->
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <div class="add">
-
-                                <!-- début form -->
-                                <form method='Post'>
-
-                                    <label class="lab">Nom <span style="color:red">*</span></label>
-                                    <input name='name' class="input0" value="">
-                                    <p class="error"></p>
-
-                                    <br>
-
-                                    <label class="lab">Code interne</label>
-                                    <button disabled="disabled" class="input1">Champs généré automatiquement</button>
-
-                                    <br>
-
-                                    <label class="lab2">Notes / remarques</label>
-                                    <textarea name='notes' class="textarea"></textarea>
-                                    <p class="error"></p>
-
-                                    <!-- bouton form -->
-                                    <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <div class="btnPlace">
-                                            <a href="{{ path('customer') }}" class="btnBlanc">ANNULER</a>&emsp;
-                                            <button type='submit' name='submit' class="btnOrange"><span class="glyphicon glyphicon-ok"></span> SAUVEGARDER</button>
-                                        </div>
-                                    </div>
-
-                                </form>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-
-        </section>
-        
-        {% include 'includes/footer.html.twig' %}
-
         {% block body %}
+        
+            {% include 'includes/navbar.html.twig' %}
+
+            <section id="insert">
+
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <!-- menu -->
+                        <div class="col-lg-3 col-md-3 col-sm-6">
+                            {% include 'includes/menu.html.twig' %}
+                        </div>
+
+                        <!-- page -->
+                        <div class="col-lg-9 col-md-9 col-sm-12">
+
+                            <!-- lien -->
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <h2 class="nouv">Nouveau client</h2>
+                                <ul class="listContact">
+                                    <a href="{{ path('customerAdd') }}" class="infoGenerale">INFORMATIONS GÉNÉRALES</a>&emsp;
+                                    <a href="{{ path('contactAdd') }}" class="contactLien2">CONTACTS CLIENT</a>
+                                </ul>
+                            </div>
+
+                            <!-- debut carré -->
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="add">
+
+                                    <!-- début form -->
+                                    <form method='Post'>
+
+                                        <label class="lab">Nom <span style="color:red">*</span></label>
+                                        <input name='name' class="input0" value="">
+                                        <p class="error"></p>
+
+                                        <br>
+
+                                        <label class="lab">Code interne</label>
+                                        <button disabled="disabled" class="input1">Champs généré automatiquement</button>
+
+                                        <br>
+
+                                        <label class="lab2">Notes / remarques</label>
+                                        <textarea name='notes' class="textarea"></textarea>
+                                        <p class="error"></p>
+
+                                        <!-- bouton form -->
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <div class="btnPlace">
+                                                <a href="{{ path('customer') }}" class="btnBlanc">ANNULER</a>&emsp;
+                                                <button type='submit' name='submit' class="btnOrange"><span class="glyphicon glyphicon-ok"></span> SAUVEGARDER</button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+            
+            {% include 'includes/footer.html.twig' %}
+
         {% endblock %}
 
     </body>
