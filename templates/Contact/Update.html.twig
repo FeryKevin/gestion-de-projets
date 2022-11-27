@@ -45,7 +45,7 @@
                                     <a href="{{ path('home') }}" class="infoGenerale2">INFORMATIONS GÉNÉRALES</a>&emsp;
                                     {# <a href="{{ path('customerAdd') }}" class="infoGenerale2">INFORMATIONS GÉNÉRALES</a>&emsp; #}
                                     {# <a href="{{ path('hostAdd') }}" class="infoGenerale2">INFORMATIONS GÉNÉRALES</a>&emsp; #}
-                                    <a href="{{ path('contactAdd') }}" class="contactLien4">CONTACT</a>
+                                    <a href="{{ path('contactUpdate') }}" class="contactLien4">CONTACT</a>
                                 </ul>
                             </div>
 
@@ -130,9 +130,8 @@
                                 
                                         <!-- ajouter -->
                                         <br><br>
-                                        <a href="{{ path('home') }}" class="btnOrange">+ AJOUTER UN CONTACT</a>
-                                        {# <a href="{{ path('customer') }}" class="btnOrange">+ AJOUTER UN CONTACT</a> #}
-                                        {# <a href="{{ path('host') }}" class="btnOrange">+ AJOUTER UN CONTACT</a> #}
+                                        <a href="{{ path('contactAdd') }}" class="btnOrange">+ AJOUTER UN CONTACT</a>
+                                        {# redirection si c'est un host / customer #}                                       
                                         <br><br>
 
                                         <!-- pagination boutons -->
