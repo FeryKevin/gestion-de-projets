@@ -18,10 +18,10 @@ class Host
     #[ORM\Column(length: 255)]
     private ?string $code = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column(type: 'text', length: 1000)]
+    #[ORM\Column(type: 'text', length: 1000, nullable: true)]
     private string $notes;
 
     public function getId(): ?int
