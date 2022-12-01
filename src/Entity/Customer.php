@@ -24,10 +24,12 @@ class Customer
     #[ORM\Column(type: 'text', length: 1000, nullable: true)]
     private ?string $notes = null;
 
+
     public function getId(): ?int
     {
         return $this->id;
     }
+
 
     public function getCode(): ?string
     {
@@ -40,6 +42,7 @@ class Customer
 
         return $this;
     }
+    
 
     public function getName(): ?string
     {
