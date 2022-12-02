@@ -6,6 +6,9 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping\Table;
 use Doctrine\ORM\Mapping as ORM;
 
+use App\Entity\Host;
+use App\Entity\Customer;
+
 #[ORM\Entity]
 #[ORM\Table(name:'project')]
 class Project
@@ -33,12 +36,13 @@ class Project
     #[ORM\Column(type: 'text', length: 1000, nullable: true)]
     private ?string $notes = null;
 
-    #[ORM\Column(targetEntity: Host::class)]
-    private Host $host;
+    #[ORM\ManyToOne(targetEntity: Host::class)]
+    #[ORM\JoinColumn(name: 'host_id', referencedColumnName: 'id')]
+    private Host|null $host = null;
 
-    #[ORM\Column(targetEntity: Customer::class)]
-    private Customer $customer;
-
+    #[ORM\ManyToOne(targetEntity: Customer::class)]
+    #[ORM\JoinColumn(name: 'customer_id', referencedColumnName: 'id')]
+    private Customer|null $customer = null;
 
     public function getId(): ?int
     {
@@ -110,6 +114,17 @@ class Project
         return $this;
     }
 
+    public function getNotes(): ?string
+    {
+        return $this->notes;
+    }
+
+    public function setNotes(string $notes): self
+    {
+        $this->notes = $notes;
+
+        return $this;
+    }
 
     public function getHost(): ?Host 
 	{

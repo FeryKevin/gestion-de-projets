@@ -6,8 +6,10 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping\Table;
 use Doctrine\ORM\Mapping as ORM;
 
+use App\Entity\Project;
+
 #[ORM\Entity]
-#[ORM\Table(name:'project')]
+#[ORM\Table(name:'environment')]
 class Environment
 {
     #[ORM\Id]
@@ -36,9 +38,9 @@ class Environment
     #[ORM\Column]
     private ?int $ip_restriction = null;
 
-    #[ORM\Column(targetEntity: Project::class)]
-    private Project $project;
-
+    #[ORM\ManyToOne(targetEntity: Project::class)]
+    #[ORM\JoinColumn(name: 'project_id', referencedColumnName: 'id')]
+    private Project|null $project = null;
 
     public function getId(): ?int
     {
