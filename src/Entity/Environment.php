@@ -66,7 +66,7 @@ class Environment
         return $this->link;
     }
 
-    public function setLink(string $link): self
+    public function setLink(?string $link): self
     {
         $this->link = $link;
 
@@ -79,7 +79,7 @@ class Environment
         return $this->ip_address;
     }
 
-    public function setIpAdress(string $ip_address): self
+    public function setIpAdress(?string $ip_address): self
     {
         $this->ip_address = $ip_address;
 
@@ -92,7 +92,7 @@ class Environment
         return $this->ssh_port;
     }
 
-    public function setSshPort(int $ssh_port): self
+    public function setSshPort(?int $ssh_port): self
     {
         $this->ssh_port = $ssh_port;
 
@@ -105,7 +105,7 @@ class Environment
         return $this->ssh_username;
     }
 
-    public function setSshUsername(string $ssh_username): self
+    public function setSshUsername(?string $ssh_username): self
     {
         $this->ssh_username = $ssh_username;
 
@@ -118,7 +118,7 @@ class Environment
         return $this->phpmyadmin_link;
     }
 
-    public function setPhpmyadminLink(string $phpmyadmin_link): self
+    public function setPhpmyadminLink(?string $phpmyadmin_link): self
     {
         $this->phpmyadmin_link = $phpmyadmin_link;
 
@@ -144,7 +144,7 @@ class Environment
 		return $this->project;
 	}
 
-	public function setProject(Project $project_id): self
+	public function setProject(?Project $project_id): self
 	{
 		$this->project = $project_id;
 

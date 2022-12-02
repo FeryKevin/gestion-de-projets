@@ -30,7 +30,7 @@ class Project
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $link_mock_ups = null;
     
-    #[ORM\Column]
+    #[ORM\Column(type: 'integer')]
     private ?int $managed_server = null;
 
     #[ORM\Column(type: 'text', length: 1000, nullable: true)]
@@ -81,7 +81,7 @@ class Project
         return $this->lastpass_folder;
     }
 
-    public function setLastpast_folder(string $lastpass_folder): self
+    public function setLastpast_folder(?string $lastpass_folder): self
     {
         $this->lastpass_folder = $lastpass_folder;
 
@@ -94,7 +94,7 @@ class Project
         return $this->link_mock_ups;
     }
 
-    public function setLink_mock_ups(string $link_mock_ups): self
+    public function setLink_mock_ups(?string $link_mock_ups): self
     {
         $this->link_mock_ups = $link_mock_ups;
 
@@ -119,7 +119,7 @@ class Project
         return $this->notes;
     }
 
-    public function setNotes(string $notes): self
+    public function setNotes(?string $notes): self
     {
         $this->notes = $notes;
 

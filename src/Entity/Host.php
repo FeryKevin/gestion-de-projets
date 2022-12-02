@@ -62,7 +62,7 @@ class Host
         return $this->notes;
     }
 
-    public function setNotes(string $notes): self
+    public function setNotes(?string $notes): self
     {
         $this->notes = $notes;
 
