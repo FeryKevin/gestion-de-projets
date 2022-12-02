@@ -17,13 +17,13 @@ class Contact
     private int $id;
 
     #[ORM\Column(length: 255)]
-    private ?string $code = null;
+    private ?string $email = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    private ?string $phone_number = null;
 
-    #[ORM\Column(type: 'text', length: 1000)]
-    private string $notes;
+    #[ORM\Column(length: 255)]
+    private ?string $role = null;
 
     #[ORM\Column(targetEntity: Host::class)]
     private Host $host;
@@ -36,60 +36,60 @@ class Contact
         return $this->id;
     }
 
-    public function getCode(): ?string
+    public function getEmail(): ?string
     {
-        return $this->code;
+        return $this->email;
     }
 
-    public function setCode(string $code): self
+    public function setEmail(string $email): self
     {
-        $this->code = $code;
+        $this->email = $email;
 
         return $this;
     }
 
-    public function getName(): ?string
+    public function getPhoneNumber(): ?string
     {
-        return $this->name;
+        return $this->phone_number;
     }
 
-    public function setName(string $name): self
+    public function setPhoneNumber(string $phone_number): self
     {
-        $this->name = $name;
+        $this->phone_number = $phone_number;
 
         return $this;
     }
 
-    public function getNotes(): ?string
+    public function getRole(): ?string
     {
-        return $this->notes;
+        return $this->role;
     }
 
-    public function setNotes(string $notes): self
+    public function setRole(string $role): self
     {
-        $this->notes = $notes;
+        $this->role = $role;
 
         return $this;
     }
 
-    public function getHost(): ?Host
+    public function getHost(): Host
     {
         return $this->host;
     }
 
-    public function setHost(?Host $host): self
+    public function setHost(Host $host): self
     {
         $this->host = $host;
 
         return $this;
     }
 
-    public function getCustomer(): ?Customer
+    public function getCustomer(): Customer
     {
         return $this->customer;
     }
 
-    public function setCustomer(?Customer $customer): self
+    public function setCustomer(Customer $customer): self
     {
         $this->customer = $customer;
 
