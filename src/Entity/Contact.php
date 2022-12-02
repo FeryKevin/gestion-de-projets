@@ -25,11 +25,13 @@ class Contact
     #[ORM\Column(length: 255)]
     private ?string $role = null;
 
-    #[ORM\Column(targetEntity: Host::class)]
-    private Host $host;
+    #[ORM\ManyToOne(targetEntity: Host::class)]
+    #[ORM\JoinColumn(name: 'host_id', referencedColumnName: 'id')]
+    private Host|null $host = null;
 
-    #[ORM\Column(targetEntity: Customer::class)]
-    private Customer $customer;
+    #[ORM\ManyToOne(targetEntity: Customer::class)]
+    #[ORM\JoinColumn(name: 'customer_id', referencedColumnName: 'id')]
+    private Customer|null $customer = null;
 
     public function getId(): ?int
     {
@@ -72,7 +74,7 @@ class Contact
         return $this;
     }
 
-    public function getHost(): Host
+    public function getHost(): ?Host
     {
         return $this->host;
     }
@@ -84,7 +86,7 @@ class Contact
         return $this;
     }
 
-    public function getCustomer(): Customer
+    public function getCustomer(): ?Customer
     {
         return $this->customer;
     }
