@@ -37,12 +37,12 @@ class Project
     private ?string $notes = null;
 
     #[ORM\ManyToOne(targetEntity: Host::class)]
-    #[ORM\JoinColumn(name: 'host_id', referencedColumnName: 'id')]
-    private Host|null $host = null;
+    #[ORM\JoinColumn(name: 'host_id', referencedColumnName: 'id', nullable: false)]
+    private $host;
 
     #[ORM\ManyToOne(targetEntity: Customer::class)]
-    #[ORM\JoinColumn(name: 'customer_id', referencedColumnName: 'id')]
-    private Customer|null $customer = null;
+    #[ORM\JoinColumn(name: 'customer_id', referencedColumnName: 'id', nullable: false)]
+    private $customer;
 
     public function getId(): ?int
     {

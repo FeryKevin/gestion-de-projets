@@ -39,8 +39,8 @@ class Environment
     private ?int $ip_restriction = null;
 
     #[ORM\ManyToOne(targetEntity: Project::class)]
-    #[ORM\JoinColumn(name: 'project_id', referencedColumnName: 'id')]
-    private Project|null $project = null;
+    #[ORM\JoinColumn(name: 'project_id', referencedColumnName: 'id', nullable: false)]
+    private $project;
 
     public function getId(): ?int
     {
