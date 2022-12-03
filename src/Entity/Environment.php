@@ -26,7 +26,7 @@ class Environment
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $ip_address = null;
 
-    #[ORM\Column(type: 'integer', length: 6, nullable: true)]
+    #[ORM\Column(type: 'smallint', nullable: true)]
     private ?int $ssh_port = null;
 
     #[ORM\Column(length: 255, nullable: true)]
