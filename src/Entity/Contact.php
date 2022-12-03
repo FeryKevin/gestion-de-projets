@@ -29,11 +29,11 @@ class Contact
     private ?string $role = null;
 
     #[ORM\ManyToOne(targetEntity: Host::class)]
-    #[ORM\JoinColumn(name: 'host_id', referencedColumnName: 'id', nullable: true)]
+    #[ORM\JoinColumn(name: 'host_id', referencedColumnName: 'id')]
     private Host|null $host = null;
 
     #[ORM\ManyToOne(targetEntity: Customer::class)]
-    #[ORM\JoinColumn(name: 'customer_id', referencedColumnName: 'id', nullable: true)]
+    #[ORM\JoinColumn(name: 'customer_id', referencedColumnName: 'id')]
     private Customer|null $customer = null;
 
     public function getId(): ?int
