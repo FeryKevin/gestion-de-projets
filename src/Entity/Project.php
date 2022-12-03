@@ -30,7 +30,7 @@ class Project
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $link_mock_ups = null;
     
-    #[ORM\Column(type: 'integer')]
+    #[ORM\Column(type: 'boolean')]
     private ?int $managed_server = null;
 
     #[ORM\Column(type: 'text', length: 1000, nullable: true)]

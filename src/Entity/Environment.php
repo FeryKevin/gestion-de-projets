@@ -26,7 +26,7 @@ class Environment
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $ip_address = null;
 
-    #[ORM\Column(length: 6, nullable: true)]
+    #[ORM\Column(type: 'integer', length: 6, nullable: true)]
     private ?int $ssh_port = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -35,7 +35,7 @@ class Environment
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $phpmyadmin_link = null;
 
-    #[ORM\Column]
+    #[ORM\Column(type: 'boolean')]
     private ?int $ip_restriction = null;
 
     #[ORM\ManyToOne(targetEntity: Project::class)]
