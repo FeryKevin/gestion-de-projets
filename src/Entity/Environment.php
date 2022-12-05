@@ -36,7 +36,7 @@ class Environment
     private ?string $phpmyadmin_link = null;
 
     #[ORM\Column(type: 'boolean')]
-    private ?int $ip_restriction = null;
+    private ?bool $ip_restriction = false;
 
     #[ORM\ManyToOne(targetEntity: Project::class)]
     #[ORM\JoinColumn(name: 'project_id', referencedColumnName: 'id', nullable: false)]
@@ -46,7 +46,6 @@ class Environment
     {
         return $this->id;
     }
-
 
     public function getName(): ?string
     {
@@ -60,7 +59,6 @@ class Environment
         return $this;
     }
 
-
     public function getLink(): ?string
     {
         return $this->link;
@@ -72,7 +70,6 @@ class Environment
 
         return $this;
     }
-
 
     public function getIpAdress(): ?string
     {
@@ -86,7 +83,6 @@ class Environment
         return $this;
     }
 
-
     public function getSshPort(): ?int
     {
         return $this->ssh_port;
@@ -98,7 +94,6 @@ class Environment
 
         return $this;
     }
-
 
     public function getSshUsername(): ?string
     {
@@ -112,7 +107,6 @@ class Environment
         return $this;
     }
 
-
     public function getPhpmyadminLink(): ?string
     {
         return $this->phpmyadmin_link;
@@ -125,7 +119,6 @@ class Environment
         return $this;
     }
 
-
     public function getIpRestriction(): ?int
     {
         return $this->ip_restriction;
@@ -137,7 +130,6 @@ class Environment
 
         return $this;
     }
-
 
     public function getProject(): ?Project 
 	{

@@ -24,12 +24,10 @@ class Host
     #[ORM\Column(type: 'text', length: 1000, nullable: true)]
     private ?string $notes = null;
 
-
     public function getId(): ?int
     {
         return $this->id;
     }
-
 
     public function getCode(): ?string
     {
@@ -43,7 +41,6 @@ class Host
         return $this;
     }
 
-
     public function getName(): ?string
     {
         return $this->name;
@@ -55,7 +52,6 @@ class Host
 
         return $this;
     }
-
     
     public function getNotes(): ?string
     {

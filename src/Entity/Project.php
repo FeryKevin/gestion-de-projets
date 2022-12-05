@@ -31,7 +31,7 @@ class Project
     private ?string $link_mock_ups = null;
     
     #[ORM\Column(type: 'boolean')]
-    private ?int $managed_server = null;
+    private ?bool $managed_server = false;
 
     #[ORM\Column(type: 'text', length: 1000, nullable: true)]
     private ?string $notes = null;
@@ -49,7 +49,6 @@ class Project
         return $this->id;
     }
 
-
     public function getName(): ?string
     {
         return $this->name;
@@ -61,7 +60,6 @@ class Project
 
         return $this;
     }
-    
 
     public function getCode(): ?string
     {
@@ -75,7 +73,6 @@ class Project
         return $this;
     }
 
-
     public function getLastpast_folder(): ?string
     {
         return $this->lastpass_folder;
@@ -87,7 +84,6 @@ class Project
 
         return $this;
     }
-
     
     public function getLink_mock_ups(): ?string
     {
@@ -101,7 +97,6 @@ class Project
         return $this;
     }
 
-    
     public function getManaged_server(): ?int
     {
         return $this->managed_server;
@@ -138,7 +133,6 @@ class Project
         return $this;
 	}
 
-    
 	public function getCustomer(): ?Customer 
 	{
 		return $this->customer;
