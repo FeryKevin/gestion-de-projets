@@ -52,22 +52,17 @@
                                 <div class="add">
 
                                     <!-- début form -->
-                                    <form method='Post'>
+                                    {# <form method='Post'>
 
                                         <label class="lab">Nom <span style="color:red">*</span></label>
                                         <input name='name' class="input0" value="">
                                         <p class="error"></p>
 
-                                        <br>
-
                                         <label class="lab">Code interne</label>
                                         <button disabled="disabled" class="input1">Champs généré automatiquement</button>
 
-                                        <br>
-
                                         <label class="lab2">Notes / remarques</label>
                                         <textarea name='notes' class="textarea"></textarea>
-                                        <p class="error"></p>
 
                                         <!-- bouton form -->
                                         <div class="col-lg-12 col-md-12 col-sm-12">
@@ -77,16 +72,29 @@
                                             </div>
                                         </div>
 
-                                    </form>
-
+                                    </form> #}
+                                    {{ form_start(form) }}
+                                    <div>
+                                        {{ form_label(form.name, 'Nom', {'label_attr': {'class': 'lab'}}) }}
+                                        {{ form_widget(form.name, {'attr': {'class': 'input0'}}) }}
+                                        <br>
+                                        {{ form_label(form.code, 'Code interne', {'label_attr': {'class': 'lab'}}) }}
+                                        {{ form_widget(form.code, {'attr': {'class': 'input1'}}) }}
+                                        <br>
+                                        {{ form_label(form.notes, 'Notes / remarques', {'label_attr': {'class': 'lab2'}}) }}
+                                        {{ form_widget(form.notes, {'attr': {'class': 'textarea'}}) }}
+                                        <div class="btnPlace">
+                                            <a href="{{ path('customer') }}" class="btnBlanc">ANNULER</a>&emsp;
+                                            {{ form_row(form.submit, { 'label': 'SAUVEGARDER', 'attr': {'class': 'btnOrange'}}) }}
+                                            {# <span class="glyphicon glyphicon-ok"></span> SAUVEGARDER</button> #}
+                                        </div>
+                                    </div>
+                                    {{ form_end(form) }}
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
-
             </section>
             
             {% include 'includes/footer.html.twig' %}
