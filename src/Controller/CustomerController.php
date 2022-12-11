@@ -6,6 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Customer;
+use App\Form\CustomerType;
+use App\Repository\CustomerRepository;
 
 final class CustomerController extends AbstractController
 {
@@ -15,11 +18,24 @@ final class CustomerController extends AbstractController
         return $this->render('Customer/View.html.twig', [
         ]);
     }
-    
+
     #[Route(path: "/Customer/Add", name: "customerAdd")]
-    public function customerAdd(Request $request): Response
+    public function customerAdd(Request $request, CustomerRepository $customerRepository): Response
     {
+        $customer = new Customer();
+        $form = $this->createForm(CustomerType::class, $customer);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $customerRepository->save($customer);
+
+            return $this->redirectToRoute('nom', [
+                'codes' => $customer->getName(),
+            ]);
+        }
+
         return $this->render('Customer/Insert.html.twig', [
+            'form' => $form->createView(),
         ]);
     }
 
